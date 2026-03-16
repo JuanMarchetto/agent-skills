@@ -5,16 +5,46 @@
   },
   "metadata": {
     "description": "Production-grade skills for AI coding assistants",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
-      "name": "agent-skills",
+      "name": "maestro-mobile-testing",
       "source": {
         "source": "url",
-        "url": "https://github.com/JuanMarchetto/agent-skills.git"
+        "url": "https://github.com/JuanMarchetto/maestro-mobile-testing.git"
       },
-      "description": "Mobile E2E testing, demo recording pipelines, browser automation, and scripted video capture",
+      "description": "Comprehensive Maestro E2E testing patterns for React Native/Expo — 11 patterns, auth testing, CI/CD, MCP integration",
+      "version": "1.1.0",
+      "strict": true
+    },
+    {
+      "name": "demo-pipeline",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/demo-pipeline.git"
+      },
+      "description": "Natural language to automated demo recording pipeline for mobile and web apps",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "agent-browser",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/agent-browser-skill.git"
+      },
+      "description": "Browser automation for AI agents via inference.sh — navigate, interact, scrape, record video",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "webreel",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/webreel-skill.git"
+      },
+      "description": "Scripted browser demo videos with cursor animation, keystroke overlays, and sound effects",
       "version": "1.0.0",
       "strict": true
     }
