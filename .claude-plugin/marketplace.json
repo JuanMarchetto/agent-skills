@@ -1,0 +1,22 @@
+{
+  "name": "agent-skills-marketplace",
+  "owner": {
+    "name": "Juan Marchetto"
+  },
+  "metadata": {
+    "description": "Production-grade skills for AI coding assistants",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "agent-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/agent-skills.git"
+      },
+      "description": "Mobile E2E testing, demo recording pipelines, browser automation, and scripted video capture",
+      "version": "1.0.0",
+      "strict": true
+    }
+  ]
+}
