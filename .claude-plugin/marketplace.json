@@ -4,57 +4,17 @@
     "name": "Juan Marchetto"
   },
   "metadata": {
-    "description": "15 agent skills — multi-agent advisory systems, E2E testing, mobile design systems, PDF presentations, app store assets, UI/UX design, content creation, testing pipelines, and browser automation for AI coding assistants",
-    "version": "2.0.0"
+    "description": "12 agent skills — multi-agent evaluation systems, composable pipelines, mobile testing, browser automation, and design systems for AI coding assistants",
+    "version": "3.0.0"
   },
   "plugins": [
-    {
-      "name": "maestro-mobile-testing",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/maestro-mobile-testing.git"
-      },
-      "description": "Comprehensive Maestro E2E testing patterns for React Native/Expo — 11 patterns, auth testing, CI/CD, MCP integration",
-      "version": "1.1.0",
-      "strict": true
-    },
-    {
-      "name": "demo-pipeline",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/demo-pipeline.git"
-      },
-      "description": "Natural language to automated demo recording pipeline for mobile and web apps",
-      "version": "1.0.0",
-      "strict": true
-    },
-    {
-      "name": "agent-browser",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/agent-browser-skill.git"
-      },
-      "description": "Browser automation for AI agents via inference.sh — navigate, interact, scrape, record video",
-      "version": "1.0.0",
-      "strict": true
-    },
-    {
-      "name": "webreel",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/webreel-skill.git"
-      },
-      "description": "Scripted browser demo videos with cursor animation, keystroke overlays, and sound effects",
-      "version": "1.0.0",
-      "strict": true
-    },
     {
       "name": "hackathon-jury",
       "source": {
         "source": "url",
         "url": "https://github.com/JuanMarchetto/hackathon-jury-skill.git"
       },
-      "description": "Simulate a real hackathon jury — researches actual judges, builds personas, runs parallel evaluations, synthesizes deliberation",
+      "description": "Simulate a real hackathon jury — researches actual judges, builds personas, runs parallel evaluations, synthesizes deliberation with pitch coaching",
       "version": "1.0.0",
       "strict": true
     },
@@ -74,37 +34,17 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/council-skill.git"
       },
-      "description": "Life advisory council — 8 parallel specialist advisors covering finance, health, career, relationships, and more, with unified synthesis",
+      "description": "Advisory council — 8 parallel specialist advisors covering finance, health, career, relationships, and more, with unified synthesis",
       "version": "1.0.0",
       "strict": true
     },
     {
-      "name": "ui-ux-polish-skill",
+      "name": "demo-pipeline",
       "source": {
         "source": "url",
-        "url": "https://github.com/JuanMarchetto/ui-ux-polish-skill.git"
+        "url": "https://github.com/JuanMarchetto/demo-pipeline.git"
       },
-      "description": "Iterative UI/UX polishing workflow for achieving Stripe-level visual polish through multiple passes",
-      "version": "1.0.0",
-      "strict": true
-    },
-    {
-      "name": "youtube-devrel-skill",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/youtube-devrel-skill.git"
-      },
-      "description": "Developer YouTube content creation — tutorial structure, screen recording, shorts, SEO, thumbnails",
-      "version": "1.0.0",
-      "strict": true
-    },
-    {
-      "name": "ios-glass-ui-skill",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/ios-glass-ui-skill.git"
-      },
-      "description": "iOS-native glass material UI design following Apple Human Interface Guidelines",
+      "description": "Natural language to automated demo recording — discovers screens, generates script, executes with Maestro or webreel, outputs video + screenshots + report",
       "version": "1.0.0",
       "strict": true
     },
@@ -114,27 +54,37 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/e2e-pipeline-skill.git"
       },
-      "description": "Auto-generate and run E2E tests from static codebase analysis",
+      "description": "Auto-generate and run E2E tests from static codebase analysis — discovers flows, generates Maestro tests with assertions, reports pass/fail",
       "version": "1.0.0",
       "strict": true
     },
     {
-      "name": "app-store-screenshots",
+      "name": "maestro-mobile-testing",
       "source": {
         "source": "url",
-        "url": "https://github.com/JuanMarchetto/app-store-screenshots-skill.git"
+        "url": "https://github.com/JuanMarchetto/maestro-mobile-testing.git"
       },
-      "description": "App Store and Google Play screenshot creation with exact platform specs",
+      "description": "Comprehensive Maestro E2E testing patterns for React Native/Expo — 11 patterns, auth testing, CI/CD, MCP integration",
+      "version": "1.2.0",
+      "strict": true
+    },
+    {
+      "name": "webreel",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/webreel-skill.git"
+      },
+      "description": "Scripted browser demo videos with cursor animation, keystroke overlays, and sound effects from JSON config",
       "version": "1.0.0",
       "strict": true
     },
     {
-      "name": "playwright-recording",
+      "name": "agent-browser",
       "source": {
         "source": "url",
-        "url": "https://github.com/JuanMarchetto/playwright-recording-skill.git"
+        "url": "https://github.com/JuanMarchetto/agent-browser-skill.git"
       },
-      "description": "Record browser interactions as video using Playwright",
+      "description": "Browser automation for AI agents via inference.sh — navigate, interact with @e refs, scrape, record video",
       "version": "1.0.0",
       "strict": true
     },
@@ -144,7 +94,27 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/mobile-design-system-skill.git"
       },
-      "description": "Comprehensive mobile UI/UX design system — React Native, iOS, Android, touch, gestures, accessibility",
+      "description": "Mobile UI/UX design system — React Native components, touch interactions, gestures, accessibility, iOS and Android platform conventions",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "ios-glass-ui",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/ios-glass-ui-skill.git"
+      },
+      "description": "iOS-native glass material UI design — translucency, blur, depth following Apple Human Interface Guidelines",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "app-store-screenshots",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/app-store-screenshots-skill.git"
+      },
+      "description": "App Store and Google Play screenshot creation with exact platform specs, gallery ordering, device mockups, and captions",
       "version": "1.0.0",
       "strict": true
     },
@@ -154,7 +124,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/pdf-presentation-skill.git"
       },
-      "description": "Generate professional PDF reports and presentations from structured content",
+      "description": "Generate professional PDF reports and presentations from evaluations, proposals, and structured content",
       "version": "1.0.0",
       "strict": true
     }
