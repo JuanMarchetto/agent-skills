@@ -1,6 +1,6 @@
 # Agent Skills
 
-Skills that teach AI coding assistants real workflows — mobile E2E testing, automated demo recording, browser automation, and video capture. Each skill encodes domain expertise into repeatable, composable patterns.
+Multi-agent evaluation systems, testing pipelines, and browser automation skills for AI coding assistants. Includes skills that dispatch parallel specialist agents and synthesize their outputs — not just single-purpose prompts.
 
 Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
 
