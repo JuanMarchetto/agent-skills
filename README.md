@@ -14,6 +14,7 @@ HACKATHON JURY SIMULATOR — ORE at Colosseum Renaissance
 | Technical (25%)     |    7     |    9    |    9    |    7    |    8     |  8.0 |
 | Impact (20%)        |   10     |    8    |    8    |    9    |   10     |  9.0 |
 | UX/Design (15%)     |    7     |    7    |    6    |    8    |    7     |  7.0 |
+| Presentation (15%)  |    9     |    7    |    8    |    9    |    8     |  8.2 |
 | Weighted Total      |  8.55    |  8.20   |  8.25   |  8.50   |  8.40    |  8.6 |
 
 "ORE spawned an entire sub-ecosystem: pools, CLIs, boost protocols,
