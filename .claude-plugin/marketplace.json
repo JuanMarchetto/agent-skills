@@ -4,10 +4,20 @@
     "name": "Juan Marchetto"
   },
   "metadata": {
-    "description": "12 agent skills — multi-agent evaluation systems, composable pipelines, mobile testing, browser automation, and design systems for AI coding assistants",
+    "description": "Agent skills — multi-agent evaluation systems, C-to-Rust migration, composable pipelines, mobile testing, browser automation, and design systems for AI coding assistants",
     "version": "1.0.0"
   },
   "plugins": [
+    {
+      "name": "full-eval",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/full-eval-skill.git"
+      },
+      "description": "Complete strategic + personal evaluation — runs 6 business evaluators and 8 life advisors in parallel, cross-references their outputs, generates PDF report",
+      "version": "1.0.0",
+      "strict": true
+    },
     {
       "name": "hackathon-jury",
       "source": {
@@ -15,6 +25,16 @@
         "url": "https://github.com/JuanMarchetto/hackathon-jury-skill.git"
       },
       "description": "Simulate a real hackathon jury — researches actual judges, builds personas, runs parallel evaluations, synthesizes deliberation with pitch coaching",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "vc-evaluator",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/vc-evaluator-skill.git"
+      },
+      "description": "Simulate a VC investment panel — researches real investors in your sector, builds personas, runs parallel evaluations, synthesizes partner meeting deliberation",
       "version": "1.0.0",
       "strict": true
     },
@@ -35,6 +55,36 @@
         "url": "https://github.com/JuanMarchetto/council-skill.git"
       },
       "description": "Advisory council — 8 parallel specialist advisors covering finance, health, career, relationships, and more, with unified synthesis",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "c-cpp-analyzer",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/c-cpp-analyzer-skill.git"
+      },
+      "description": "Analyze C/C++ code for Rust migration — classify difficulty, detect patterns, plan conversion strategy",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "rust-migration",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/rust-migration-skill.git"
+      },
+      "description": "C/C++ to idiomatic Rust conversion patterns — memory management, error handling, pointer translation, quality gates",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "migration-validator",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/migration-validator-skill.git"
+      },
+      "description": "Validate C-to-Rust migrations — safety checks, unsafe minimization, semantic equivalence, idiomatic scoring",
       "version": "1.0.0",
       "strict": true
     },
@@ -94,7 +144,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/mobile-design-system-skill.git"
       },
-      "description": "Mobile UI/UX design system — React Native components, touch interactions, gestures, accessibility, iOS and Android platform conventions",
+      "description": "Mobile UI/UX design system — React Native components, touch interactions, gestures, accessibility, iOS and Android conventions",
       "version": "1.0.0",
       "strict": true
     },
