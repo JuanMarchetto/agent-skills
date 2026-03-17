@@ -1,6 +1,6 @@
 # Agent Skills
 
-Multi-agent evaluation systems, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants.
+Multi-agent evaluation systems, persistent error memory, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants.
 
 15 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
 
@@ -52,19 +52,19 @@ Open source readiness evaluator — 5 parallel agents audit licensing, documenta
 
 ---
 
-## Rust Migration
+## Error Memory
 
-### [c-to-rust-migration](https://github.com/JuanMarchetto/c-to-rust-migration-skill)
-Complete C/C++ to Rust migration pipeline. Analyzes code difficulty (easy/medium/hard), converts to idiomatic safe Rust with proven patterns (malloc→Vec, error codes→Result, NULL→Option), validates with differential testing. Extracted from [Noricum](https://github.com/JuanMarchetto/noricum).
-`Requires: Rust toolchain`
+### [learn-by-mistake](https://github.com/JuanMarchetto/learn-by-mistake-skill)
+Your AI never makes the same mistake twice. Analyzes every failure, extracts the root cause as a structured lesson, and persists it. Next time the same pattern appears, the fix is applied before the error can happen. Confidence gate (2 occurrences before promoting), secret sanitization, and automatic pruning built-in. Commands: `/learn`, `/lessons`, `/forget`.
+`Requires: None (hooks optional)`
 
 ---
 
-## Error Learning
+## Rust Migration
 
-### [learn-by-mistake](https://github.com/JuanMarchetto/learn-by-mistake-skill)
-Persistent error memory. Analyzes failures, extracts root-cause lessons, and prevents the same mistake twice. Confidence gate requires 2 occurrences before promoting a lesson. Secret sanitization built-in. Commands: `/learn`, `/lessons`, `/forget`.
-`Requires: None (hooks optional)`
+### [c-to-rust-migration](https://github.com/JuanMarchetto/c-to-rust-migration-skill)
+Complete C/C++ to Rust migration pipeline. Analyzes code difficulty (easy/medium/hard), converts to idiomatic safe Rust with proven patterns (malloc→Vec, error codes→Result, NULL→Option), validates with differential testing.
+`Requires: Rust toolchain`
 
 ---
 
@@ -182,11 +182,12 @@ Any skill works standalone. The composition is optional but powerful.
 Then pick what you need:
 
 ```
-/plugin install full-eval@agent-skills
+/plugin install learn-by-mistake@agent-skills
 /plugin install hackathon-jury@agent-skills
+/plugin install full-eval@agent-skills
+/plugin install architect@agent-skills
 /plugin install vc-evaluator@agent-skills
 /plugin install oss-readiness@agent-skills
-/plugin install architect@agent-skills
 /plugin install council-skill@agent-skills
 /plugin install c-to-rust-migration@agent-skills
 /plugin install demo-pipeline@agent-skills
@@ -196,7 +197,6 @@ Then pick what you need:
 /plugin install agent-browser@agent-skills
 /plugin install mobile-design-system@agent-skills
 /plugin install pdf-presentation@agent-skills
-/plugin install learn-by-mistake@agent-skills
 ```
 
 ## Manual Install
