@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Production-grade skills for AI coding assistants",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
@@ -45,6 +45,16 @@
         "url": "https://github.com/JuanMarchetto/webreel-skill.git"
       },
       "description": "Scripted browser demo videos with cursor animation, keystroke overlays, and sound effects",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "hackathon-jury",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/hackathon-jury-skill.git"
+      },
+      "description": "Simulate a real hackathon jury — researches actual judges, builds personas, runs parallel evaluations, synthesizes deliberation",
       "version": "1.0.0",
       "strict": true
     }

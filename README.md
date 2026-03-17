@@ -17,6 +17,7 @@ Then pick what you need:
 /plugin install demo-pipeline@agent-skills
 /plugin install agent-browser@agent-skills
 /plugin install webreel@agent-skills
+/plugin install hackathon-jury@agent-skills
 ```
 
 ## Skills
@@ -36,6 +37,10 @@ Browser automation built for AI agents. Navigate pages, interact with elements u
 ### [webreel](https://github.com/JuanMarchetto/webreel-skill)
 Record scripted browser demos from a JSON config. Cursor animation, keystroke HUD overlays, sound effects. Outputs MP4, GIF, or WebM. Supports custom themes, viewport presets, shared step sequences, and watch mode for iterative development.
 `Requires: webreel (npm)`
+
+### [hackathon-jury](https://github.com/JuanMarchetto/hackathon-jury-skill)
+Simulate a real hackathon jury evaluating your project. Researches actual jury members via web search, builds 3-7 juror personas, dispatches parallel evaluations from each perspective, and synthesizes a deliberation with scores, individual feedback, placement estimate, and pitch coaching.
+`Requires: WebSearch, Agent tool`
 
 ## How They Compose
 
