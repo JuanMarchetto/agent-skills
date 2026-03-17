@@ -4,7 +4,7 @@
     "name": "Juan Marchetto"
   },
   "metadata": {
-    "description": "Agent skills — multi-agent evaluation systems, C-to-Rust migration, composable pipelines, mobile testing, browser automation, and design systems for AI coding assistants",
+    "description": "Agent skills — multi-agent evaluation systems, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants",
     "version": "1.0.0"
   },
   "plugins": [
@@ -14,7 +14,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/full-eval-skill.git"
       },
-      "description": "Complete strategic + personal evaluation — runs 6 business evaluators and 8 life advisors in parallel, cross-references their outputs, generates PDF report",
+      "description": "Complete strategic + personal evaluation — 6 business evaluators and 8 life advisors in parallel, cross-referenced, with PDF report",
       "version": "1.0.0",
       "strict": true
     },
@@ -24,7 +24,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/hackathon-jury-skill.git"
       },
-      "description": "Simulate a real hackathon jury — researches actual judges, builds personas, runs parallel evaluations, synthesizes deliberation with pitch coaching",
+      "description": "Simulate a real hackathon jury — researches actual judges, builds personas, parallel evaluations, deliberation synthesis with pitch coaching",
       "version": "1.0.0",
       "strict": true
     },
@@ -34,7 +34,17 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/vc-evaluator-skill.git"
       },
-      "description": "Simulate a VC investment panel — researches real investors in your sector, builds personas, runs parallel evaluations, synthesizes partner meeting deliberation",
+      "description": "Simulate a VC investment panel — researches real investors, builds personas, parallel evaluations, partner meeting deliberation",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "oss-readiness",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/oss-readiness-skill.git"
+      },
+      "description": "Open source readiness evaluator — 5 parallel agents audit licensing, documentation, security, community readiness, and API surface",
       "version": "1.0.0",
       "strict": true
     },
@@ -44,7 +54,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/architect-skill.git"
       },
-      "description": "Evaluate ideas and projects from 6 angles simultaneously — market, technical, risk, impact, resources, innovation — with synthesis and scoring",
+      "description": "Evaluate ideas and projects from 6 angles — market, technical, risk, impact, resources, innovation — with synthesis and scoring",
       "version": "1.0.0",
       "strict": true
     },
@@ -54,37 +64,17 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/council-skill.git"
       },
-      "description": "Advisory council — 8 parallel specialist advisors covering finance, health, career, relationships, and more, with unified synthesis",
+      "description": "Advisory council — 8 parallel specialist advisors covering finance, health, career, relationships, and more, with synthesis",
       "version": "1.0.0",
       "strict": true
     },
     {
-      "name": "c-cpp-analyzer",
+      "name": "c-to-rust-migration",
       "source": {
         "source": "url",
-        "url": "https://github.com/JuanMarchetto/c-cpp-analyzer-skill.git"
+        "url": "https://github.com/JuanMarchetto/c-to-rust-migration-skill.git"
       },
-      "description": "Analyze C/C++ code for Rust migration — classify difficulty, detect patterns, plan conversion strategy",
-      "version": "1.0.0",
-      "strict": true
-    },
-    {
-      "name": "rust-migration",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/rust-migration-skill.git"
-      },
-      "description": "C/C++ to idiomatic Rust conversion patterns — memory management, error handling, pointer translation, quality gates",
-      "version": "1.0.0",
-      "strict": true
-    },
-    {
-      "name": "migration-validator",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/migration-validator-skill.git"
-      },
-      "description": "Validate C-to-Rust migrations — safety checks, unsafe minimization, semantic equivalence, idiomatic scoring",
+      "description": "Complete C/C++ to Rust migration pipeline — analyze difficulty, convert to idiomatic safe Rust, validate with differential testing",
       "version": "1.0.0",
       "strict": true
     },
@@ -94,7 +84,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/demo-pipeline.git"
       },
-      "description": "Natural language to automated demo recording — discovers screens, generates script, executes with Maestro or webreel, outputs video + screenshots + report",
+      "description": "Natural language to automated demo recording — discovers screens, generates script, executes with Maestro or webreel",
       "version": "1.0.0",
       "strict": true
     },
@@ -104,7 +94,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/e2e-pipeline-skill.git"
       },
-      "description": "Auto-generate and run E2E tests from static codebase analysis — discovers flows, generates Maestro tests with assertions, reports pass/fail",
+      "description": "Auto-generate and run E2E tests from static codebase analysis with Maestro",
       "version": "1.0.0",
       "strict": true
     },
@@ -114,7 +104,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/maestro-mobile-testing.git"
       },
-      "description": "Comprehensive Maestro E2E testing patterns for React Native/Expo — 11 patterns, auth testing, CI/CD, MCP integration",
+      "description": "Maestro E2E testing patterns for React Native/Expo — 11 patterns, auth testing, CI/CD, MCP integration",
       "version": "1.0.0",
       "strict": true
     },
@@ -124,7 +114,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/webreel-skill.git"
       },
-      "description": "Scripted browser demo videos with cursor animation, keystroke overlays, and sound effects from JSON config",
+      "description": "Scripted browser demo videos with cursor animation, keystroke overlays, and sound effects",
       "version": "1.0.0",
       "strict": true
     },
@@ -134,7 +124,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/agent-browser-skill.git"
       },
-      "description": "Browser automation for AI agents via inference.sh — navigate, interact with @e refs, scrape, record video",
+      "description": "Browser automation via inference.sh — navigate, interact with @e refs, scrape, record video",
       "version": "1.0.0",
       "strict": true
     },
@@ -144,27 +134,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/mobile-design-system-skill.git"
       },
-      "description": "Mobile UI/UX design system — React Native components, touch interactions, gestures, accessibility, iOS and Android conventions",
-      "version": "1.0.0",
-      "strict": true
-    },
-    {
-      "name": "ios-glass-ui",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/ios-glass-ui-skill.git"
-      },
-      "description": "iOS-native glass material UI design — translucency, blur, depth following Apple Human Interface Guidelines",
-      "version": "1.0.0",
-      "strict": true
-    },
-    {
-      "name": "app-store-screenshots",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/JuanMarchetto/app-store-screenshots-skill.git"
-      },
-      "description": "App Store and Google Play screenshot creation with exact platform specs, gallery ordering, device mockups, and captions",
+      "description": "Mobile UI/UX design system — React Native, touch interactions, gestures, accessibility, iOS and Android conventions",
       "version": "1.0.0",
       "strict": true
     },
@@ -174,7 +144,7 @@
         "source": "url",
         "url": "https://github.com/JuanMarchetto/pdf-presentation-skill.git"
       },
-      "description": "Generate professional PDF reports and presentations from evaluations, proposals, and structured content",
+      "description": "Generate professional PDF reports from evaluations, proposals, and structured content",
       "version": "1.0.0",
       "strict": true
     }
