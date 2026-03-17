@@ -177,6 +177,16 @@
       "description": "Audit code against architecture documentation — detects drift between design and implementation",
       "version": "1.0.0",
       "strict": true
+    },
+    {
+      "name": "founder-mode",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/founder-mode-skill.git"
+      },
+      "description": "End-to-end product builder — idea evaluation through architecture, TDD, implementation, E2E, verification, and GTM launch kit",
+      "version": "1.0.0",
+      "strict": true
     }
   ]
 }
