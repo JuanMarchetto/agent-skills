@@ -4,8 +4,8 @@
     "name": "Juan Marchetto"
   },
   "metadata": {
-    "description": "10 agent skills — multi-agent advisory systems, UI/UX design, content creation, testing pipelines, and browser automation for AI coding assistants",
-    "version": "1.4.0"
+    "description": "15 agent skills — multi-agent advisory systems, E2E testing, mobile design systems, PDF presentations, app store assets, UI/UX design, content creation, testing pipelines, and browser automation for AI coding assistants",
+    "version": "2.0.0"
   },
   "plugins": [
     {
@@ -105,6 +105,56 @@
         "url": "https://github.com/JuanMarchetto/ios-glass-ui-skill.git"
       },
       "description": "iOS-native glass material UI design following Apple Human Interface Guidelines",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "e2e-pipeline",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/e2e-pipeline-skill.git"
+      },
+      "description": "Auto-generate and run E2E tests from static codebase analysis",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "app-store-screenshots",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/app-store-screenshots-skill.git"
+      },
+      "description": "App Store and Google Play screenshot creation with exact platform specs",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "playwright-recording",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/playwright-recording-skill.git"
+      },
+      "description": "Record browser interactions as video using Playwright",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "mobile-design-system",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/mobile-design-system-skill.git"
+      },
+      "description": "Comprehensive mobile UI/UX design system — React Native, iOS, Android, touch, gestures, accessibility",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "pdf-presentation",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/pdf-presentation-skill.git"
+      },
+      "description": "Generate professional PDF reports and presentations from structured content",
       "version": "1.0.0",
       "strict": true
     }
