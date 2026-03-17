@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "12 agent skills — multi-agent evaluation systems, composable pipelines, mobile testing, browser automation, and design systems for AI coding assistants",
-    "version": "3.0.0"
+    "version": "1.0.0"
   },
   "plugins": [
     {
@@ -65,7 +65,7 @@
         "url": "https://github.com/JuanMarchetto/maestro-mobile-testing.git"
       },
       "description": "Comprehensive Maestro E2E testing patterns for React Native/Expo — 11 patterns, auth testing, CI/CD, MCP integration",
-      "version": "1.2.0",
+      "version": "1.0.0",
       "strict": true
     },
     {
