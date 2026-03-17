@@ -1,12 +1,32 @@
 # Agent Skills
 
-Your AI coding assistant, but with 6 business analysts and 8 life advisors running simultaneously — evaluating independently, disagreeing with each other, and a meta-synthesizer resolving their conflicts into one verdict.
+Multi-agent evaluation systems, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants.
 
-13 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
+14 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
+
+```
+HACKATHON JURY SIMULATOR — Colosseum Eternal
+5 jurors based on real Colosseum judges | Bondum Mobile
+
+┌────────────┬──────────┬─────────┬──────────┬──────────┬──────────┬───────┐
+│ Criterion  │ Matty T. │ Nate L. │ Mert M.  │ Clay R.  │ Chase B. │  Avg  │
+│            │ (Growth) │ (Tech)  │ (Infra)  │ (VC)     │ (Eco)    │       │
+├────────────┼──────────┼─────────┼──────────┼──────────┼──────────┼───────┤
+│ Innovation │    5     │    6    │    6     │    4     │    5     │  5.2  │
+│ Technical  │    7     │   6.5   │   8.5    │    6     │    7     │  7.0  │
+│ UX/Design  │    6     │    7    │    7     │    7     │    7     │  6.8  │
+│ Impact     │    7     │   7.5   │    8     │    6     │    6     │  6.9  │
+├────────────┼──────────┼─────────┼──────────┼──────────┼──────────┼───────┤
+│ Overall    │   6.2    │   6.6   │  7.18    │   5.4    │  6.15    │ 6.31  │
+└────────────┴──────────┴─────────┴──────────┴──────────┴──────────┴───────┘
+
+Placement: Top 25-30%
+"Find a co-founder. Yesterday." — Clay Robbins (ex-Slow Ventures)
+```
 
 ---
 
-## The Star Skills
+## Multi-Agent Panels
 
 ### [full-eval](https://github.com/JuanMarchetto/full-eval-skill)
 One command: 6 business evaluators + 8 life advisors + PDF report. Orchestrates architect, council, and pdf-presentation into a single end-to-end evaluation. You describe an idea, it dispatches 14 specialist agents in parallel, synthesizes two independent verdicts, resolves cross-system conflicts, and delivers a polished PDF. The complete strategic + personal evaluation in one shot.
@@ -20,9 +40,25 @@ Web-searches the actual judges of your hackathon, builds 3-7 juror personas from
 6 parallel specialist evaluators — market, technical, risk, impact, resources, innovation — each assess your idea independently. A synthesizer resolves conflicts and produces a unified Opportunity Score, Value Matrix, and Go/No-Go recommendation. Dual-mode: raw ideas from scratch or existing codebase health scans.
 `Requires: Agent tool, WebSearch`
 
+### [vc-evaluator](https://github.com/JuanMarchetto/vc-evaluator-skill)
+Simulate a real VC investment panel. Researches actual investors in your sector, builds personas from their investment thesis and portfolio, runs parallel evaluations, and simulates the Monday partner meeting with funding verdict, feedback, and pitch coaching.
+`Requires: WebSearch, Agent tool`
+
+### [oss-readiness](https://github.com/JuanMarchetto/oss-readiness-skill)
+Open source readiness evaluator — 5 parallel agents audit licensing, documentation, security, community readiness, and API surface. Produces a readiness score and prioritized checklist for going open source.
+`Requires: Agent tool`
+
 ### [council-skill](https://github.com/JuanMarchetto/council-skill)
 8 parallel life advisors — finance, health, career, relationships, creativity, productivity, social dynamics, personal growth. Each evaluates your situation independently, then a synthesizer unifies their recommendations. The personal counterpart to architect's business analysis.
 `Requires: Agent tool`
+
+---
+
+## Rust Migration
+
+### [c-to-rust-migration](https://github.com/JuanMarchetto/c-to-rust-migration-skill)
+Complete C/C++ to Rust migration pipeline. Analyzes code difficulty (easy/medium/hard), converts to idiomatic safe Rust with proven patterns (malloc→Vec, error codes→Result, NULL→Option), validates with differential testing. Extracted from [Noricum](https://github.com/JuanMarchetto/noricum).
+`Requires: Rust toolchain`
 
 ---
 
@@ -66,17 +102,9 @@ Browser automation built for AI agents. Navigate, interact with `@e` refs, fill 
 Comprehensive mobile UI/UX design system covering React Native, iOS, and Android. Touch targets, gesture handling, haptic feedback, safe areas, accessibility, dark mode, and platform-specific patterns. Pairs with e2e-pipeline: design defines the rules, tests verify them.
 `Requires: React Native or native platform`
 
-### [ios-glass-ui-skill](https://github.com/JuanMarchetto/ios-glass-ui-skill)
-iOS-native glass material UI following Apple Human Interface Guidelines. SwiftUI components with blur effects, vibrancy, adaptive tinting, and proper accessibility. Sheets, cards, navigation bars, custom controls.
-`Requires: Xcode, SwiftUI`
-
 ---
 
-## Assets
-
-### [app-store-screenshots](https://github.com/JuanMarchetto/app-store-screenshots-skill)
-App Store and Google Play screenshot creation with exact platform specs. Device-framed screenshots at required resolutions for all device sizes, with text overlays, backgrounds, and marketing copy. Ready-to-upload assets.
-`Requires: None`
+## Documents
 
 ### [pdf-presentation](https://github.com/JuanMarchetto/pdf-presentation-skill)
 Professional PDF reports and presentations from structured content. Multi-page layouts, charts, branding, export-ready formatting. Turns architect evaluations and council advisories into polished deliverables — the final stage of the pipeline.
@@ -111,6 +139,8 @@ full-eval
 ```
 
 14 specialist agents. 2 synthesizers. 1 meta-synthesis. 1 PDF. One command.
+
+The same multi-agent orchestration pattern powers hackathon-jury (3-7 jurors), vc-evaluator (3-5 investors), and oss-readiness (5 auditors) — each researching real people and evaluating from their genuine perspective.
 
 ---
 
@@ -148,32 +178,25 @@ Then pick what you need:
 ```
 /plugin install full-eval@agent-skills
 /plugin install hackathon-jury@agent-skills
+/plugin install vc-evaluator@agent-skills
+/plugin install oss-readiness@agent-skills
 /plugin install architect@agent-skills
 /plugin install council-skill@agent-skills
+/plugin install c-to-rust-migration@agent-skills
 /plugin install demo-pipeline@agent-skills
 /plugin install e2e-pipeline@agent-skills
 /plugin install maestro-mobile-testing@agent-skills
 /plugin install webreel@agent-skills
 /plugin install agent-browser@agent-skills
 /plugin install mobile-design-system@agent-skills
-/plugin install ios-glass-ui-skill@agent-skills
-/plugin install app-store-screenshots@agent-skills
 /plugin install pdf-presentation@agent-skills
 ```
 
 ## Manual Install
 
-For any AI coding tool that supports the [Agent Skills](https://code.claude.com/docs/en/skills) standard:
-
 ```bash
 git clone https://github.com/JuanMarchetto/<skill-name>.git
 cp -r <skill-name> ~/.claude/skills/<skill-name>
-```
-
-Or install via npx:
-
-```bash
-npx @anthropic-ai/claude-code-skill install JuanMarchetto/<skill-name>
 ```
 
 ## License
