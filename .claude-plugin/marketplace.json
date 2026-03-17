@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Production-grade skills for AI coding assistants",
-    "version": "1.2.0"
+    "version": "1.3.0"
   },
   "plugins": [
     {
@@ -55,6 +55,16 @@
         "url": "https://github.com/JuanMarchetto/hackathon-jury-skill.git"
       },
       "description": "Simulate a real hackathon jury — researches actual judges, builds personas, runs parallel evaluations, synthesizes deliberation",
+      "version": "1.0.0",
+      "strict": true
+    },
+    {
+      "name": "architect",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/architect-skill.git"
+      },
+      "description": "Evaluate ideas and projects from 6 angles simultaneously — market, technical, risk, impact, resources, innovation — with synthesis and scoring",
       "version": "1.0.0",
       "strict": true
     }

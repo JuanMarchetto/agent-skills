@@ -18,6 +18,7 @@ Then pick what you need:
 /plugin install agent-browser@agent-skills
 /plugin install webreel@agent-skills
 /plugin install hackathon-jury@agent-skills
+/plugin install architect@agent-skills
 ```
 
 ## Skills
@@ -41,6 +42,10 @@ Record scripted browser demos from a JSON config. Cursor animation, keystroke HU
 ### [hackathon-jury](https://github.com/JuanMarchetto/hackathon-jury-skill)
 Simulate a real hackathon jury evaluating your project. Researches actual jury members via web search, builds 3-7 juror personas, dispatches parallel evaluations from each perspective, and synthesizes a deliberation with scores, individual feedback, placement estimate, and pitch coaching.
 `Requires: WebSearch, Agent tool`
+
+### [architect](https://github.com/JuanMarchetto/architect-skill)
+Evaluate any idea or project from 6 angles simultaneously. Dispatches parallel specialist evaluators (market, technical, risk, impact, resources, innovation), then synthesizes their outputs into a unified assessment with Opportunity Score, Value Matrix, and Go/No-Go recommendation.
+`Requires: Agent tool, WebSearch`
 
 ## How They Compose
 
