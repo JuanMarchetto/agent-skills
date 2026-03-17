@@ -1,6 +1,6 @@
 # Agent Skills
 
-Multi-agent evaluation systems, testing pipelines, and browser automation skills for AI coding assistants. Includes skills that dispatch parallel specialist agents and synthesize their outputs — not just single-purpose prompts.
+10 production-ready skills for AI coding assistants — multi-agent advisory systems, UI/UX design workflows, content creation pipelines, mobile testing, and browser automation. Several skills dispatch parallel specialist agents and synthesize their outputs into unified assessments, going well beyond single-purpose prompts.
 
 Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
 
@@ -19,6 +19,10 @@ Then pick what you need:
 /plugin install webreel@agent-skills
 /plugin install hackathon-jury@agent-skills
 /plugin install architect@agent-skills
+/plugin install council-skill@agent-skills
+/plugin install ui-ux-polish-skill@agent-skills
+/plugin install youtube-devrel-skill@agent-skills
+/plugin install ios-glass-ui-skill@agent-skills
 ```
 
 ## Skills
@@ -47,6 +51,22 @@ Simulate a real hackathon jury evaluating your project. Researches actual jury m
 Evaluate any idea or project from 6 angles simultaneously. Dispatches parallel specialist evaluators (market, technical, risk, impact, resources, innovation), then synthesizes their outputs into a unified assessment with Opportunity Score, Value Matrix, and Go/No-Go recommendation.
 `Requires: Agent tool, WebSearch`
 
+### [council-skill](https://github.com/JuanMarchetto/council-skill)
+Life advisory council with 8 parallel specialist advisors covering finance, health, career, relationships, creativity, productivity, social dynamics, and personal growth. Each advisor evaluates independently, then a synthesizer unifies their recommendations into actionable guidance.
+`Requires: Agent tool`
+
+### [ui-ux-polish-skill](https://github.com/JuanMarchetto/ui-ux-polish-skill)
+Iterative UI/UX polishing workflow for achieving Stripe-level visual polish. Runs multiple passes analyzing spacing, typography, color, animations, and micro-interactions, producing specific code changes each round until the interface reaches production quality.
+`Requires: Browser/screenshot capability`
+
+### [youtube-devrel-skill](https://github.com/JuanMarchetto/youtube-devrel-skill)
+Developer YouTube content creation end-to-end. Covers tutorial structure, screen recording scripts, YouTube Shorts optimization, SEO metadata, thumbnail design briefs, and audience growth strategy for technical channels.
+`Requires: None`
+
+### [ios-glass-ui-skill](https://github.com/JuanMarchetto/ios-glass-ui-skill)
+iOS-native glass material UI design following Apple Human Interface Guidelines. Generates SwiftUI components with blur effects, vibrancy, adaptive tinting, and proper accessibility. Covers sheets, cards, navigation bars, and custom controls.
+`Requires: Xcode, SwiftUI`
+
 ## How They Compose
 
 ```
@@ -54,9 +74,14 @@ demo-pipeline
   uses maestro-mobile-testing (for mobile apps)
   uses webreel (for web apps)
   outputs screenshots + video + report
+
+architect + council
+  architect evaluates the idea/project (6 specialist evaluators)
+  council advises on life impact (8 specialist advisors)
+  together: full strategic + personal assessment
 ```
 
-Skills are designed to work independently or together. demo-pipeline orchestrates the others based on your project type — it's a pipeline skill that composes atomic skills.
+Skills are designed to work independently or together. demo-pipeline orchestrates testing skills based on your project type. architect and council are both multi-agent systems that can provide complementary evaluations.
 
 ## Manual Install
 
