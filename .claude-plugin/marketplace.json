@@ -4,7 +4,7 @@
     "name": "Juan Marchetto"
   },
   "metadata": {
-    "description": "Agent skills — multi-agent evaluation systems, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants",
+    "description": "Agent skills — multi-agent evaluation systems, persistent error memory, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants",
     "version": "1.0.0"
   },
   "plugins": [
