@@ -2,7 +2,7 @@
 
 Multi-agent evaluation systems, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants.
 
-14 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
+15 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
 
 ```
 HACKATHON JURY SIMULATOR — ORE at Colosseum Renaissance
@@ -57,6 +57,14 @@ Open source readiness evaluator — 5 parallel agents audit licensing, documenta
 ### [c-to-rust-migration](https://github.com/JuanMarchetto/c-to-rust-migration-skill)
 Complete C/C++ to Rust migration pipeline. Analyzes code difficulty (easy/medium/hard), converts to idiomatic safe Rust with proven patterns (malloc→Vec, error codes→Result, NULL→Option), validates with differential testing. Extracted from [Noricum](https://github.com/JuanMarchetto/noricum).
 `Requires: Rust toolchain`
+
+---
+
+## Error Learning
+
+### [learn-by-mistake](https://github.com/JuanMarchetto/learn-by-mistake-skill)
+Persistent error memory. Analyzes failures, extracts root-cause lessons, and prevents the same mistake twice. Confidence gate requires 2 occurrences before promoting a lesson. Secret sanitization built-in. Commands: `/learn`, `/lessons`, `/forget`.
+`Requires: None (hooks optional)`
 
 ---
 
@@ -188,6 +196,7 @@ Then pick what you need:
 /plugin install agent-browser@agent-skills
 /plugin install mobile-design-system@agent-skills
 /plugin install pdf-presentation@agent-skills
+/plugin install learn-by-mistake@agent-skills
 ```
 
 ## Manual Install

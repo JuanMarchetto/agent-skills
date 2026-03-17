@@ -147,6 +147,16 @@
       "description": "Generate professional PDF reports from evaluations, proposals, and structured content",
       "version": "1.0.0",
       "strict": true
+    },
+    {
+      "name": "learn-by-mistake",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/learn-by-mistake-skill.git"
+      },
+      "description": "Persistent error memory — analyzes failures, extracts root-cause lessons, and prevents the same mistake twice",
+      "version": "1.0.0",
+      "strict": true
     }
   ]
 }
