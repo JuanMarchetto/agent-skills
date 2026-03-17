@@ -9,7 +9,7 @@
 
 ## 1. Overview
 
-Founder Mode is a Claude Code skill that orchestrates the full product lifecycle — from idea evaluation to launched product with GTM artifacts. It composes 7+ existing marketplace skills into an 8-phase sequential checkpoint pipeline with human gates, crash recovery, and configurable iteration loops.
+Founder Mode is a Claude Code skill that orchestrates the full product lifecycle — from idea evaluation to launched product with GTM artifacts. It composes existing marketplace skills and built-in agent logic into a 9-phase sequential checkpoint pipeline (Phase 0 bootstrap + Phases 1-8) with human gates, crash recovery, and configurable iteration loops.
 
 **Positioning:** "From idea to launched product. Not just code — a product."
 
@@ -55,6 +55,22 @@ founder-mode-skill/
 ```
 
 **Architecture pattern:** Orchestrator + Agents (same as `architect` and `full-eval` skills). Orchestrator manages pipeline flow, config, state, and gates. Agents do the actual work within each phase and get dispatched via the Agent tool with fresh context windows.
+
+### Skill invocation pattern
+Each agent is dispatched via the Agent tool with a self-contained prompt. When an agent needs an external marketplace skill (e.g., `architect`), the agent prompt instructs Claude to invoke the skill's slash command (e.g., `/architect "evaluate: {idea}"`). The agent prompt does NOT duplicate the external skill's logic — it delegates and parses the output. When an agent needs behavior from `superpowers:*` skills (writing-plans, TDD, verification), the agent prompt embeds the relevant methodology directly (these are patterns, not external dependencies).
+
+### plugin.json schema
+```json
+{
+  "name": "founder-mode",
+  "description": "End-to-end product builder — from idea evaluation to launched product with GTM artifacts",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/founder-mode-skill",
+  "repository": "https://github.com/JuanMarchetto/founder-mode-skill",
+  "license": "MIT"
+}
+```
 
 ---
 
@@ -117,6 +133,11 @@ Generated at `.founder/config.json` during Phase 0 bootstrap:
 - `"auto"` — print results, auto-continue unless blocking issue (NO-GO, NEEDS_FIXES)
 - `"skip"` — no output, no pause, pipeline continues
 
+### Tech stack resolution:
+When `techStack` is `"auto"`:
+- **New ideas:** Phase 1 recommends a tech stack based on the idea. Phase 2 finalizes it. Config is updated to the finalized stack after Phase 2.
+- **Existing projects:** Phase 0 auto-detects from package.json/Cargo.toml/go.mod/etc.
+
 ---
 
 ## 4. Pipeline State & Crash Recovery
@@ -167,6 +188,8 @@ Generated at `.founder/config.json` during Phase 0 bootstrap:
 3. Finds `currentPhase` and chunk progress
 4. Prints: "Resuming session `fm-20260317-143022` — Phase 4 (Implementation), chunk 4 of 5"
 5. Reads summaries for context, continues from current chunk
+
+**Mid-gate crash handling:** If `currentPhase` is marked as completed but the corresponding gate decision is `null`, the resume displays the gate again (re-shows results and options) rather than re-running the phase.
 
 ### Artifact directory after full run:
 ```
@@ -297,6 +320,26 @@ Five files in `.founder/phase8-gtm/`. Consumes Phase 1 (market data, differentia
 
 **Design rule:** Every artifact is markdown, human-readable, and git-committable. No binary formats. The user can read, edit, or override any artifact between phases.
 
+### Acceptance Criteria Quality Gate
+Phase 1 must produce at least 3 testable acceptance criteria. If the idea is too vague (e.g., "Build something cool with AI"), the evaluator flags this in Key Risks and marks the criteria section as `NEEDS_REFINEMENT`. Gate 1 then prompts the user: "The idea is too vague for testable criteria. Please refine your idea or provide acceptance criteria before continuing."
+
+### Phase Failure Protocol
+If any phase fails to produce its expected artifact (build errors, skill unavailable, API failures):
+1. Orchestrator writes `.founder/phaseN-error.md` with failure details
+2. Phase status set to `failed` in state.json
+3. The next applicable gate triggers with the error report
+4. Gate presents: `[retry]` (re-run the phase), `[skip]` (skip this phase and continue), or `[stop]` (save and exit)
+
+### E2E Strategy by Project Type
+Phase 5 adapts its E2E approach based on the project type detected in Phase 2 architecture:
+- **Web app:** Playwright-style browser tests
+- **CLI tool:** Shell script integration tests
+- **Library/SDK:** Integration tests exercising the public API
+- **Mobile app:** Maestro tests (existing e2e-pipeline patterns)
+- **API server:** HTTP request tests (curl/fetch-based)
+
+The E2E agent detects project type from the Phase 2 architecture and selects the appropriate strategy automatically.
+
 ---
 
 ## 6. Human Gates
@@ -325,6 +368,7 @@ Your choice:
 - Shows: Opportunity Score, Go/No-Go, key risks, acceptance criteria
 - Extra option: `[reject]` — idea scored too low, exit with eval as output
 - If architect says NO-GO, gate auto-triggers with recommendation to reject
+- If user chooses `[continue]` on a NO-GO: orchestrator prints warning ("Proceeding despite NO-GO recommendation. Acceptance criteria may be weak.") and continues to Phase 2. The NO-GO override is logged in state.json for Phase 7 post-run analysis
 - `[iterate]` = re-evaluate with different framing or additional context
 
 ### Gate 2: Post-Implementation (after Phase 4)
@@ -344,9 +388,17 @@ Your choice:
 
 ### Gate 3: Post-Verification (after Phase 6)
 - Shows: false positives, spec-to-test gaps, architecture drift, verdict
-- `[iterate]` = go back to Phase 4 to fix issues (counts against iteration counter)
+- `[iterate]` = go back to Phase 4 to fix issues (counts against shared iteration counter)
 - `[continue]` only if verdict is PASS or user explicitly overrides
 - Gate 3 iterate loops back to Phase 4, not Phase 6 — forces fix through implementation → E2E → verification again
+
+**Gate 3 re-entry contract:** When Gate 3 triggers `[iterate]`:
+- Phase 4 receives: Phase 6 verification report (specifically `Required Fixes`) + Phase 3 original plan + Phase 4 previous implementation log
+- Only failing/flagged chunks are re-run (not all chunks)
+- After Phase 4 completes, Phases 5 and 6 execute again automatically before Gate 3 re-triggers
+
+### Iteration counter semantics
+There is a single `iteration` counter shared across Gate 2 and Gate 3. Any `[iterate]` action at either gate increments the counter. When `iteration >= maxIterations`, both gates offer the extension prompt. This is intentional — it caps total implementation rework regardless of which gate triggers it.
 
 ### Auto-skip behavior:
 - `"auto"` gate: print summary, auto-continue unless blocking issue (NO-GO, NEEDS_FIXES)
@@ -357,7 +409,7 @@ Your choice:
 Phase 4 (Implementation)
     │
     ▼
-  Gate 2 ──[iterate]──► Phase 4 (re-run failing chunks)
+  Gate 2 ──[iterate]──► Phase 4 (re-run failing chunks only)
     │                         │
     │                         ▼
     │                       Gate 2 (iteration 2/3)
@@ -371,12 +423,21 @@ Phase 5 (E2E)
 Phase 6 (Verification)
     │
     ▼
-  Gate 3 ──[iterate]──► Phase 4 (fix verification issues)
-    │                         │ (counts against iteration counter)
+  Gate 3 ──[iterate]──► Phase 4 (fix verification issues, failing chunks only)
+    │                         │ (counts against shared iteration counter)
     │                         ▼
     │                       Gate 2
+    │                         │ [continue]
+    │                         ▼
+    │                       Phase 5 (E2E re-run)
     │                         │
-    │◄────────────────────────┘
+    │                         ▼
+    │                       Phase 6 (Verification re-run)
+    │                         │
+    │                         ▼
+    │                       Gate 3
+    │                         │
+    │◄────────────────────────┘ [continue]
     │
     ▼ [continue]
 Phase 7 (Analysis)
@@ -414,7 +475,7 @@ Bootstrapper runs a codebase scan producing:
 |-------|----------|-----------------|
 | 0 - Bootstrap | Config gen, lesson loading | Config gen + codebase scan |
 | 1 - Eval | Full 6-evaluator run | Skipped by default (can enable in config) |
-| 2 - Architecture | Generate from scratch | Reverse-engineer from codebase — document what exists |
+| 2 - Architecture | Generate from scratch | Best-effort reverse-engineer from codebase scan (directory structure, import graph, README, framework patterns). Marked as `<!-- DRAFT: Verify against actual architecture -->`. User can edit at Gate 2's `[edit]` option |
 | 3 - TDD Plan | Plan from architecture | Plan from architecture + existing test audit — identify gaps |
 | 4 - Implementation | Build from zero | Extend/fix existing code guided by plan |
 | 5 - E2E | Generate all E2E tests | Generate E2E respecting existing test framework |
@@ -457,19 +518,21 @@ Initial release entry with all features categorized (Added/Changed/Fixed), follo
 
 ## 9. Skills Composed
 
-| Phase | Existing Skills Invoked | How |
-|-------|------------------------|-----|
-| 0 - Bootstrap | `learn-by-mistake` | Load domain-relevant lessons |
-| 1 - Eval | `architect` | Full 6-evaluator dispatch (parallel) |
-| 2 - Architecture | `architecture-reviewer` patterns | Generate (new) or reverse-engineer (existing) |
-| 3 - TDD Plan | `superpowers:writing-plans` | Decompose architecture into test-first chunks |
-| 4 - Implementation | `superpowers:test-driven-development` | Per-chunk TDD execution |
-| 4 - Implementation | `learn-by-mistake` | Active hooks during coding |
-| 5 - E2E | `e2e-pipeline` patterns | E2E test generation + execution |
-| 6 - Verification | `superpowers:verification-before-completion` | False-positive detection |
-| 6 - Verification | `architecture-reviewer` | Architecture drift check |
-| 7 - Analysis | `post-run-analysis` | Pattern analysis + lesson extraction |
-| 8 - GTM | Templates (new) | GTM artifact generation |
+| Phase | Dependency | Invocation | Notes |
+|-------|-----------|------------|-------|
+| 0 - Bootstrap | `learn-by-mistake` | Slash command (`/learn`) | Load domain-relevant lessons. Requires skill installed. |
+| 1 - Eval | `architect` | Slash command (`/architect`) | Full 6-evaluator dispatch. Requires skill installed. |
+| 2 - Architecture | None (built-in) | Agent prompt in `architect-gen.md` | Uses architecture-reviewer patterns but logic is embedded in agent prompt. |
+| 3 - TDD Plan | None (built-in) | Agent prompt in `planner.md` | Embeds writing-plans methodology directly. No external dependency. |
+| 4 - Implementation | None (built-in) | Agent prompt in `implementer.md` | Embeds TDD methodology. learn-by-mistake hooks active if installed. |
+| 5 - E2E | None (built-in) | Agent prompt in `e2e-runner.md` | E2E strategy selected by project type (web/CLI/library/mobile/API). |
+| 6 - Verification | None (built-in) | Agent prompt in `verifier.md` | Embeds verification + gap analysis logic. |
+| 7 - Analysis | `post-run-analysis` | Slash command (`/post-run-analysis`) | Optional. If not installed, analyzer agent does built-in analysis. |
+| 8 - GTM | None (built-in) | Agent prompt in `gtm-drafter.md` | Uses templates from `templates/` directory. |
+
+**Hard dependencies (must be installed):** `architect` (Phase 1)
+**Soft dependencies (enhance but not required):** `learn-by-mistake` (Phase 0, 4), `post-run-analysis` (Phase 7)
+**No external dependency (logic embedded in agent prompts):** Phases 2, 3, 4, 5, 6, 8
 
 ---
 
