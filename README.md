@@ -2,7 +2,7 @@
 
 Multi-agent evaluation systems, persistent error memory, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants.
 
-15 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
+17 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
 
 ```
 HACKATHON JURY SIMULATOR — ORE at Colosseum Renaissance
@@ -57,6 +57,18 @@ Open source readiness evaluator — 5 parallel agents audit licensing, documenta
 ### [learn-by-mistake](https://github.com/JuanMarchetto/learn-by-mistake-skill)
 Your AI never makes the same mistake twice. Analyzes every failure, extracts the root cause as a structured lesson, and persists it. Next time the same pattern appears, the fix is applied before the error can happen. Confidence gate (2 occurrences before promoting), secret sanitization, and automatic pruning built-in. Commands: `/learn`, `/lessons`, `/forget`.
 `Requires: None (hooks optional)`
+
+### [post-run-analysis](https://github.com/JuanMarchetto/post-run-analysis-skill)
+Automatic post-mortem after iterative runs (migration, build, deploy, test suites). Parses logs, compares with previous runs, identifies recurring patterns, classifies findings as FIXABLE/NEEDS_INVESTIGATION, and updates project memory. The feedback loop closer.
+`Requires: None`
+
+---
+
+## Architecture
+
+### [architecture-reviewer](https://github.com/JuanMarchetto/architecture-reviewer-skill)
+Audit code against architecture documentation. Detects drift between what was designed and what was built — boundary violations, dependency drift, responsibility creep, technology changes. Generates drift reports with severity classification. Includes ARCHITECTURE.md starter template.
+`Requires: None`
 
 ---
 
@@ -183,6 +195,8 @@ Then pick what you need:
 
 ```
 /plugin install learn-by-mistake@agent-skills
+/plugin install post-run-analysis@agent-skills
+/plugin install architecture-reviewer@agent-skills
 /plugin install hackathon-jury@agent-skills
 /plugin install full-eval@agent-skills
 /plugin install architect@agent-skills
