@@ -5,23 +5,20 @@ Multi-agent evaluation systems, C-to-Rust migration, composable pipelines, and b
 14 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
 
 ```
-HACKATHON JURY SIMULATOR — Colosseum Eternal
-5 jurors based on real Colosseum judges | Bondum Mobile
+HACKATHON JURY SIMULATOR — ORE at Colosseum Renaissance
+5 jurors based on real Colosseum judges | Grand Prize Winner (8,300 participants)
 
-┌────────────┬──────────┬─────────┬──────────┬──────────┬──────────┬───────┐
-│ Criterion  │ Matty T. │ Nate L. │ Mert M.  │ Clay R.  │ Chase B. │  Avg  │
-│            │ (Growth) │ (Tech)  │ (Infra)  │ (VC)     │ (Eco)    │       │
-├────────────┼──────────┼─────────┼──────────┼──────────┼──────────┼───────┤
-│ Innovation │    5     │    6    │    6     │    4     │    5     │  5.2  │
-│ Technical  │    7     │   6.5   │   8.5    │    6     │    7     │  7.0  │
-│ UX/Design  │    6     │    7    │    7     │    7     │    7     │  6.8  │
-│ Impact     │    7     │   7.5   │    8     │    6     │    6     │  6.9  │
-├────────────┼──────────┼─────────┼──────────┼──────────┼──────────┼───────┤
-│ Overall    │   6.2    │   6.6   │  7.18    │   5.4    │  6.15    │ 6.31  │
-└────────────┴──────────┴─────────┴──────────┴──────────┴──────────┴───────┘
+| Criterion (Weight)  | Matty T. | Nate L. | Mert M. | Clay R. | Chase B. |  Avg |
+|---------------------|----------|---------|---------|---------|----------|------|
+| Innovation (25%)    |    9     |    9    |    9    |    9    |    8     |  8.8 |
+| Technical (25%)     |    7     |    9    |    9    |    7    |    8     |  8.0 |
+| Impact (20%)        |   10     |    8    |    8    |    9    |   10     |  9.0 |
+| UX/Design (15%)     |    7     |    7    |    6    |    8    |    7     |  7.0 |
+| Weighted Total      |  8.55    |  8.20   |  8.25   |  8.50   |  8.40    |  8.6 |
 
-Placement: Top 25-30%
-"Find a co-founder. Yesterday." — Clay Robbins (ex-Slow Ventures)
+"ORE spawned an entire sub-ecosystem: pools, CLIs, boost protocols,
+ the steel framework. That is the definition of ecosystem contribution."
+ — Chase Barker, Solana Foundation
 ```
 
 ---
