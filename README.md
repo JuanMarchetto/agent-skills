@@ -2,7 +2,7 @@
 
 Multi-agent evaluation systems, persistent error memory, C-to-Rust migration, composable pipelines, and browser automation for AI coding assistants.
 
-18 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
+19 open-source skills. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and Windsurf.
 
 ```
 HACKATHON JURY SIMULATOR — ORE at Colosseum Renaissance
@@ -77,6 +77,14 @@ Audit code against architecture documentation. Detects drift between what was de
 ### [c-to-rust-migration](https://github.com/JuanMarchetto/c-to-rust-migration-skill)
 Complete C/C++ to Rust migration pipeline. Analyzes code difficulty (easy/medium/hard), converts to idiomatic safe Rust with proven patterns (malloc→Vec, error codes→Result, NULL→Option), validates with differential testing.
 `Requires: Rust toolchain`
+
+---
+
+## Ideation
+
+### [idea-lab](https://github.com/JuanMarchetto/idea-lab-skill)
+Automated idea laboratory. Describe your context (hackathon, need, problem type), and it generates N diverse ideas using forced divergence axes (SCAMPER, cross-domain analogies), pre-screens them with a quick evaluation, deep-evaluates the top ones via `/architect` (6 parallel evaluators each), and presents a ranked dashboard with scenario-based recommendations. Composes with `/founder-mode` to build the winning idea end-to-end.
+`Requires: architect skill. Optional: founder-mode`
 
 ---
 
@@ -175,6 +183,10 @@ The same multi-agent orchestration pattern powers hackathon-jury (3-7 jurors), v
 Skills invoke other skills, chain outputs, and form pipelines.
 
 ```
+idea-lab ──► architect (deep evaluation per idea)
+         ──► founder-mode (build the winning idea, optional)
+         ──► outputs: ranked dashboard + scenario recommendations
+
 founder-mode ──► architect (idea evaluation)
              ──► learn-by-mistake (error memory, optional)
              ──► post-run-analysis (phase 7, optional)
@@ -225,6 +237,7 @@ Then pick what you need:
 /plugin install mobile-design-system@agent-skills
 /plugin install pdf-presentation@agent-skills
 /plugin install founder-mode@agent-skills
+/plugin install idea-lab@agent-skills
 ```
 
 ## Manual Install

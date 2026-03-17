@@ -187,6 +187,16 @@
       "description": "End-to-end product builder — idea evaluation through architecture, TDD, implementation, E2E, verification, and GTM launch kit",
       "version": "1.0.0",
       "strict": true
+    },
+    {
+      "name": "idea-lab",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuanMarchetto/idea-lab-skill.git"
+      },
+      "description": "Automated idea laboratory — generates diverse ideas, pre-screens, evaluates top ones with /architect, ranks and recommends the best",
+      "version": "1.0.0",
+      "strict": true
     }
   ]
 }
