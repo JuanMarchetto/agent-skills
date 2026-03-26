@@ -1,0 +1,9 @@
+{
+  "name": "ui-ux-polish",
+  "description": "Iterative UI/UX polishing workflow — achieve Stripe-level visual polish through multiple compounding passes",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/ui-ux-polish-skill",
+  "repository": "https://github.com/JuanMarchetto/ui-ux-polish-skill",
+  "license": "MIT"
+}

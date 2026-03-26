@@ -1,0 +1,9 @@
+{
+  "name": "migration-validator",
+  "description": "Safety verification checklist for C-to-Rust migrations — compilation, unsafe minimization, differential testing",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/migration-validator-skill",
+  "repository": "https://github.com/JuanMarchetto/migration-validator-skill",
+  "license": "MIT"
+}

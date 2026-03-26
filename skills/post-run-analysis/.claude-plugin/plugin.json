@@ -1,0 +1,9 @@
+{
+  "name": "post-run-analysis",
+  "description": "Automatic post-mortem analysis — parses logs, compares with history, identifies recurring patterns, proposes fixes, updates memory",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/post-run-analysis-skill",
+  "repository": "https://github.com/JuanMarchetto/post-run-analysis-skill",
+  "license": "MIT"
+}

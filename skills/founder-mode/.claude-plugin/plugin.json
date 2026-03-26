@@ -1,0 +1,9 @@
+{
+  "name": "founder-mode",
+  "description": "End-to-end product builder — from idea evaluation to launched product with GTM artifacts",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/founder-mode-skill",
+  "repository": "https://github.com/JuanMarchetto/founder-mode-skill",
+  "license": "MIT"
+}

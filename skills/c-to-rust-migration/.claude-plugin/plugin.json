@@ -1,0 +1,9 @@
+{
+  "name": "c-to-rust-migration",
+  "description": "Complete C/C++ to Rust migration pipeline — analyze difficulty, convert to idiomatic safe Rust, validate with differential testing",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/c-to-rust-migration-skill",
+  "repository": "https://github.com/JuanMarchetto/c-to-rust-migration-skill",
+  "license": "MIT"
+}

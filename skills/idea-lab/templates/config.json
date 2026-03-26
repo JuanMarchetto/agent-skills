@@ -1,0 +1,9 @@
+{
+  "context": "",
+  "ideaCount": 5,
+  "topK": 3,
+  "minScore": 5.0,
+  "diversityAxes": ["B2B SaaS", "B2C consumer", "open-source tool", "educational", "mobile-first"],
+  "dimensionFilters": {},
+  "outputDir": ".idea-lab"
+}

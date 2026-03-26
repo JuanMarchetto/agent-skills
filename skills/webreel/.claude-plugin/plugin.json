@@ -1,0 +1,9 @@
+{
+  "name": "webreel",
+  "description": "Scripted browser demo videos with cursor animation, keystroke overlays, and sound effects",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/webreel-skill",
+  "repository": "https://github.com/JuanMarchetto/webreel-skill",
+  "license": "MIT"
+}

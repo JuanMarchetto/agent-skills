@@ -1,0 +1,34 @@
+{
+  "idea": "",
+  "mode": "new",
+  "techStack": "auto",
+  "maxIterations": 3,
+  "outputDir": ".founder",
+  "gates": {
+    "postEval": "pause",
+    "postImplementation": "pause",
+    "postVerification": "pause"
+  },
+  "phases": {
+    "eval": true,
+    "architecture": true,
+    "tdd": true,
+    "implementation": true,
+    "e2e": true,
+    "verification": true,
+    "postRunAnalysis": true,
+    "gtm": true
+  },
+  "tdd": {
+    "strictness": "unit+integration",
+    "coverageThreshold": 80
+  },
+  "gtm": {
+    "readme": true,
+    "pitch": true,
+    "tweetThread": true,
+    "productHunt": true,
+    "changelog": true
+  },
+  "acceptanceCriteria": []
+}

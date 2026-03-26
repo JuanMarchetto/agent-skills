@@ -1,0 +1,9 @@
+{
+  "name": "noricum-dev",
+  "description": "Noricum project conventions — architecture, crate structure, coding standards, pipeline improvements",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/noricum-dev-skill",
+  "repository": "https://github.com/JuanMarchetto/noricum-dev-skill",
+  "license": "MIT"
+}

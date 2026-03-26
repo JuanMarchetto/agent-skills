@@ -1,0 +1,9 @@
+{
+  "name": "c-cpp-analyzer",
+  "description": "Analyze C/C++ code for Rust migration planning — difficulty classification, pattern detection, risk flags",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/c-cpp-analyzer-skill",
+  "repository": "https://github.com/JuanMarchetto/c-cpp-analyzer-skill",
+  "license": "MIT"
+}

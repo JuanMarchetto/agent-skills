@@ -1,0 +1,9 @@
+{
+  "name": "idea-lab",
+  "description": "Automated idea laboratory — generates multiple ideas from context, evaluates each with multi-agent scoring, ranks and surfaces the best ones",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/idea-lab-skill",
+  "repository": "https://github.com/JuanMarchetto/idea-lab-skill",
+  "license": "MIT"
+}

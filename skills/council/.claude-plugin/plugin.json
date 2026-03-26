@@ -1,0 +1,9 @@
+{
+  "name": "council",
+  "description": "Life advisory council — 8 parallel specialist advisors with synthesis for holistic life planning",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/council-skill",
+  "repository": "https://github.com/JuanMarchetto/council-skill",
+  "license": "MIT"
+}

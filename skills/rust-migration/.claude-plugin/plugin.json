@@ -1,0 +1,9 @@
+{
+  "name": "rust-migration",
+  "description": "C/C++ to idiomatic Rust conversion patterns — memory, errors, strings, pointers, structs, control flow",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/rust-migration-skill",
+  "repository": "https://github.com/JuanMarchetto/rust-migration-skill",
+  "license": "MIT"
+}

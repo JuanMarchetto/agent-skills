@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+data/journal/*
+!data/journal/.gitkeep
+data/reviews/*
+!data/reviews/.gitkeep
+data/tracking/*
+!data/tracking/.gitkeep
+data/goals/*
+!data/goals/.gitkeep
+data/profile.md

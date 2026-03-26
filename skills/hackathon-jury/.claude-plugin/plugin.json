@@ -1,0 +1,9 @@
+{
+  "name": "hackathon-jury",
+  "description": "Simulate a real hackathon jury evaluating your project — researches actual judges, builds personas, runs parallel evaluations",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/hackathon-jury-skill",
+  "repository": "https://github.com/JuanMarchetto/hackathon-jury-skill",
+  "license": "MIT"
+}

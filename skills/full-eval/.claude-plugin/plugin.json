@@ -1,0 +1,9 @@
+{
+  "name": "full-eval",
+  "description": "Complete strategic + personal evaluation of any idea, project, or life decision. 6 business evaluators + 8 life advisors in parallel, cross-referenced, delivered as PDF.",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/full-eval-skill",
+  "repository": "https://github.com/JuanMarchetto/full-eval-skill",
+  "license": "MIT"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "architect",
+  "description": "Multidisciplinary idea and project evaluator — dispatches parallel specialist agents, synthesizes unified assessment with scores",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/architect-skill",
+  "repository": "https://github.com/JuanMarchetto/architect-skill",
+  "license": "MIT"
+}

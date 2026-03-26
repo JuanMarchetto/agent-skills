@@ -1,0 +1,9 @@
+{
+  "name": "youtube-devrel",
+  "description": "Developer YouTube content strategy — tutorial structure, screen recording, live coding, shorts, thumbnails, and SEO",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/youtube-devrel-skill",
+  "repository": "https://github.com/JuanMarchetto/youtube-devrel-skill",
+  "license": "MIT"
+}

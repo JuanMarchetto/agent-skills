@@ -1,0 +1,9 @@
+{
+  "name": "agent-browser",
+  "description": "Browser automation for AI agents via inference.sh",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/agent-browser-skill",
+  "repository": "https://github.com/JuanMarchetto/agent-browser-skill",
+  "license": "MIT"
+}

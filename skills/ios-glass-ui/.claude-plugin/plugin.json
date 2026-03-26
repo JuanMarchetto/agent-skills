@@ -1,0 +1,9 @@
+{
+  "name": "ios-glass-ui-designer",
+  "description": "iOS-native UI design with Apple glass materials — translucency, blur, and depth applied with restraint",
+  "version": "1.0.0",
+  "author": { "name": "Juan Marchetto" },
+  "homepage": "https://github.com/JuanMarchetto/ios-glass-ui-skill",
+  "repository": "https://github.com/JuanMarchetto/ios-glass-ui-skill",
+  "license": "MIT"
+}
